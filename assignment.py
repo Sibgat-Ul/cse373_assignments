@@ -1,9 +1,7 @@
-from helper_class.Queue import Queue
-from helper_class.Stack import Stack
 from helper_class.Graph import Graph
 
-from helper_class.BFS import BFS
-from helper_class.DFS import DFS
+from BFS import BFS
+from DFS import DFS
 
 
 graph = [
