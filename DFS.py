@@ -55,3 +55,34 @@ class DFS:
 
         print('-------------------')
         print('search_list: ', search_list)
+
+    def dfs_recursion(self, search_list):
+        if self.stack.is_empty():
+            return search_list
+
+        root = self.stack.pop()
+        neighbours = self.graph.get_neighbour(root)
+        self.color[root] = 'g'
+        self.visited[root] = True
+        search_list.append(root)
+        for n in neighbours:
+            if not self.visited[n]:
+                self.stack.push(n)
+                self.color[n] = 'g'
+                self.visited[n] = True
+        self.color[root] = 'b'
+
+        print('-------------------')
+        print('root: ', root)
+        print('neighbours: ', neighbours)
+        print('stack: ', self.stack.display())
+        print('color: ', self.color)
+        return self.dfs_recursion(search_list)
+
+    def search_w_recursion(self, root: int) -> None:
+        search_list = []
+        self.stack.push(root)
+        search_list = self.dfs_recursion(search_list)
+
+        print('-------------------')
+        print('search_list: ', search_list)

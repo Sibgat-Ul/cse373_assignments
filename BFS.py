@@ -1,6 +1,7 @@
 from helper_class.Queue import Queue
 from helper_class.Graph import Graph
 
+
 class BFS:
     def __init__(self, graph: Graph):
         self.graph = graph
@@ -41,9 +42,7 @@ class BFS:
             print('-------------------')
             print('root: ', root)
             print('neighbours: ', neighbours)
-            print('level: ', self.d)
             print('queue: ', self.queue.display())
-            print('visited: ', self.visited)
             print('color: ', self.color)
 
         print('-------------------')
